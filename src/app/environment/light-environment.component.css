@@ -1,0 +1,19 @@
+.channel-color-rect {
+	width:20px;
+	height:20px;
+}
+
+table.channel-table {
+	table-layout:fixed;
+}
+
+table.channel-table>tbody td {
+	vertical-align:middle;
+}
+
+table.channel-table th.color-col { width:70px; }
+table.channel-table th.name-col { width:110px; }
+table.channel-table th.id-col { width:110px; }
+table.channel-table th.override-col { width:100px; }
+table.channel-table th.perc-col { width:130px; }
+table.channel-table th.commands-col { width:100px; }

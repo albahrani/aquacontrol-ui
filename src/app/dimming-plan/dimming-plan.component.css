@@ -1,0 +1,19 @@
+.form-inline > * {
+    margin-right:10px !important;
+}
+
+table.dimming-plan-table {
+	table-layout:fixed;
+}
+
+table.dimming-plan-table>tbody th {
+	vertical-align:middle;
+}
+
+table.dimming-plan-table>tbody td {
+	vertical-align:middle;
+}
+
+/* These do not work. Must be some priority issue. */
+table.dimming-plan-table .heading-col { width:110px; }
+table.dimming-plan-table .value-col { width:90px; }

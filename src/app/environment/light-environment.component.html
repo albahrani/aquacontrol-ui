@@ -1,0 +1,38 @@
+<!-- Environment Configuration -->
+<div id="lightenvironment" class="container">
+  <div class="page-header">
+    <span class="h1">Environment <small>Configure your light equipment</small></span>
+  </div>
+  <table class="channel-table table">
+    <thead>
+      <tr>
+        <th class="color-col">Color</th>
+        <th class="name-col">Name</th>                
+        <th class="id-col">Identifier</th>
+        <th class="override-col">Mode</th>                
+        <th class="perc-col">Percentage</th>
+        <th>Pins</th>
+        <th class="commands-col">Commands</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let channel of environment; trackBy: trackChannel">
+        <td><div class="channel-color-rect" [style.background-color]="channel.color"></div></td>
+        <td>{{channel.name}}</td>
+        <td>{{channel.id}}</td>
+        <td>{{getChannelOverrideText(channel.override)}}</td>
+        <td>{{channel.percentage | percent}}</td>
+        <td>{{getChannelPinsString(channel)}}
+        </td>
+        <td>
+          <button type="button" title="Edit Channel" class="btn btn-primary" (click)="editenvchannel.show(channel)"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>          
+          <button type="button" title="Remove Channel" class="btn btn-danger" (click)="removeenvchannel.show(channel)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        </td>                
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary" (click)="addenvchannel.show()">Add Channel</button>
+  <app-add-env-channel #addenvchannel [environment]="environment" [buttonValue]="'Add Channel'" [title]="'Add Environment Channel'"></app-add-env-channel>
+  <app-add-env-channel #editenvchannel [environment]="environment" [buttonValue]="'Edit Channel'" [title]="'Edit Environment Channel'"></app-add-env-channel>
+  <app-remove-env-channel #removeenvchannel></app-remove-env-channel>
+</div>

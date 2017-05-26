@@ -1,0 +1,14 @@
+<!-- Modal -->
+<app-modal #modaldialog>
+    <div class="app-modal-header">
+      <button type="button" class="close" (click)="modaldialog.hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="envChannelNewLabel">Remove Channel Confirmation</h4>
+    </div>
+    <div class="app-modal-body">
+       Do you really want to delete the channel {{removeChannel.name}}?
+    </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-default" (click)="modaldialog.hide()">Cancel</button>
+      <button type="button" class="btn btn-danger" (click)="commitChange();modaldialog.hide()">Remove Channel</button>
+    </div>
+</app-modal>
